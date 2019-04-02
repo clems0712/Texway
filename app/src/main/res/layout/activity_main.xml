@@ -21,4 +21,10 @@
         android:layout_gravity="center"
         android:gravity="center"/>
 
+    <Button
+        android:id="@+id/buttonScan"
+        android:layout_alignParentBottom = "true"
+        android:text="Scan Your Code Bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
