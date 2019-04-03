@@ -1,20 +1,23 @@
-package com.example.texway.Fragment;
+package com.example.texway;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.texway.Portrait;
-import com.example.texway.R;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -27,6 +30,11 @@ import com.google.zxing.integration.android.IntentResult;
  */
 public class FlashHistoFragment extends Fragment {
 
+
+    RecyclerView recyclerView; // 1 - Declare RecyclerView
+
+    List<Product> products;
+    ProductViewAdapter adapter;
 
     public FlashHistoFragment() {
         // Required empty public constructor
@@ -49,7 +57,6 @@ public class FlashHistoFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
 
     }
@@ -77,6 +84,10 @@ public class FlashHistoFragment extends Fragment {
                 alertdialogbuilder.setTitle("Produit scanné");
                 AlertDialog alertDialog = alertdialogbuilder.create();
                 alertDialog.show();
+                Product product = new Product();
+                product.setBarcode(resultCode);
+                updateUI(new Product());
+
             }
         }
         else{
@@ -87,7 +98,10 @@ public class FlashHistoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_camera, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_flash_histo, container, false);
+        recyclerView = rootView.findViewById(R.id.historique_list);
+        this.configureRecyclerView();
+
         FloatingActionButton fab = rootView.findViewById(R.id.buttonScan);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +110,22 @@ public class FlashHistoFragment extends Fragment {
             }
         });
         return rootView;
+    }
+
+    private void configureRecyclerView(){
+        // 3.1 - Reset list
+        this.products = new ArrayList<>();
+        // 3.2 - Create adapter passing the list of users
+        this.adapter = new ProductViewAdapter(this.products);
+        // 3.3 - Attach the adapter to the recyclerview to populate items
+        this.recyclerView.setAdapter(this.adapter);
+        // 3.4 - Set layout manager to position the items
+        this.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+    }
+
+    private void updateUI(Product newProduct){
+        products.add(newProduct);
+        adapter.notifyDataSetChanged();
     }
 
 

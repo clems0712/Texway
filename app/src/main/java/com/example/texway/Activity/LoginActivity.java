@@ -1,9 +1,10 @@
 package com.example.texway.Activity;
 
 import android.content.Intent;
+
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,6 +40,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case  R.id.connect: {
                 //todo activity_connexion user
                 loginSuccessful();
+                finish();
                 break;
             }
             case  R.id.register: {

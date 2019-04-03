@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.example.texway.Fragment.FlashHistoFragment;
+import com.example.texway.FlashHistoFragment;
 import com.example.texway.Fragment.ScoreFragment;
 import com.example.texway.Fragment.SuggestFragment;
 import com.example.texway.R;
