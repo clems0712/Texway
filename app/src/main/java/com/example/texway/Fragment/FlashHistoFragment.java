@@ -60,7 +60,7 @@ public class FlashHistoFragment extends Fragment {
         integrator.setCaptureActivity(Portrait.class);
         integrator.setOrientationLocked(false);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
-        integrator.setPrompt("Scan Your Code Bar");
+        integrator.setPrompt("Scanner un produit");
         integrator.initiateScan();
 
     }
@@ -70,11 +70,11 @@ public class FlashHistoFragment extends Fragment {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
         if(result!=null){
             if(result.getContents() == null) {
-                Toast.makeText(getContext(),"Result Not Found",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"Annulé",Toast.LENGTH_SHORT).show();
             }
             else{
                 AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(getContext());
-                alertdialogbuilder.setTitle("Result Scanned");
+                alertdialogbuilder.setTitle("Produit scanné");
                 AlertDialog alertDialog = alertdialogbuilder.create();
                 alertDialog.show();
             }
