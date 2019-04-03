@@ -86,6 +86,7 @@ public class FlashHistoFragment extends Fragment {
                 alertDialog.setMessage("La produit a été ajouté à la liste");
                 alertDialog.show();
                 Product product = new Product();
+                product.setName("VETEMENT");
                 product.setBarcode(result.getContents());
                 updateUI(product);
 

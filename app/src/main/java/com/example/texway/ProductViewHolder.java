@@ -7,15 +7,25 @@ import android.widget.TextView;
 
 public class ProductViewHolder extends RecyclerView.ViewHolder {
 
-    TextView textView;
+    TextView barcodetextView;
+    TextView nametextView;
+    TextView scoretextView;
+    TextView compotextView;
 
     public ProductViewHolder(View itemView) {
         super(itemView);
-        textView = itemView.findViewById(R.id.barcode);
+        barcodetextView = itemView.findViewById(R.id.barcode);
+        nametextView = itemView.findViewById(R.id.name);
+        scoretextView = itemView.findViewById(R.id.score);
+        compotextView = itemView.findViewById(R.id.compo);
 
     }
 
     public void updateWithProduct(Product product){
-        this.textView.setText(product.getBarcode());
+        this.nametextView.setText(product.getName());
+        this.barcodetextView.setText("Code-Barre : " + product.getBarcode());
+        this.compotextView.setText("Composition : " + product.getComposition());
+        this.scoretextView.setText("Score : " + product.getScore());
+
     }
 }
