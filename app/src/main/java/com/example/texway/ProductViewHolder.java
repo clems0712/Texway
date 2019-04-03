@@ -16,6 +16,6 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void updateWithProduct(Product product){
-        this.textView.setText(product.getName());
+        this.textView.setText(product.getBarcode());
     }
 }

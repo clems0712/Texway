@@ -83,10 +83,11 @@ public class FlashHistoFragment extends Fragment {
                 AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(getContext());
                 alertdialogbuilder.setTitle("Produit scanné");
                 AlertDialog alertDialog = alertdialogbuilder.create();
+                alertDialog.setMessage("La produit a été ajouté à la liste");
                 alertDialog.show();
                 Product product = new Product();
-                product.setBarcode(resultCode);
-                updateUI(new Product());
+                product.setBarcode(result.getContents());
+                updateUI(product);
 
             }
         }
