@@ -6,10 +6,12 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -20,8 +22,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btnscan = (Button)findViewById(R.id.buttonScan);
-        btnscan.setOnClickListener(this);
+        //Button btnscan = (Button)findViewById(R.id.buttonScan);
+        LottieAnimationView codebarview =(LottieAnimationView) findViewById(R.id.animationscan);
+        codebarview.setOnClickListener(this);
+       // btnscan.setOnClickListener(this);
         }
 
         @Override
