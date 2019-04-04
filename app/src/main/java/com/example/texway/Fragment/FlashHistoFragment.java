@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.texway.FirebaseFacade;
 import com.example.texway.Portrait;
 import com.example.texway.Product;
 import com.example.texway.RecyclerView.ProductViewAdapter;
@@ -97,6 +98,8 @@ public class FlashHistoFragment extends Fragment {
             }
         });
 
+
+        //a enlever
         Product product = new Product();
         product.setName("Exemple de vêtement");
         product.setBarcode("11111000000");

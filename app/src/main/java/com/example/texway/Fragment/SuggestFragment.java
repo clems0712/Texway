@@ -41,25 +41,18 @@ public class SuggestFragment extends Fragment {
         recyclerView = rootView.findViewById(R.id.suggest_list);
         this.configureRecyclerView();
 
-        // exemples
+        // exemples a enlever
         Product bad = new Product();
         bad.setName("Vêtement 1");
-
         Product good = new Product();
         good.setName("Vêtement 2");
-
         updateUI(bad,good);
-
         Product bad2 = new Product();
         bad.setName("Vêtement 1");
-
         Product good2 = new Product();
         good.setName("Vêtement 2");
-
         bad2.setName("mauvais vêtement");
-
         good2.setName("bon vêtement");
-
         updateUI(bad2,good2);
 
         return rootView;
