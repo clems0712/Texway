@@ -80,5 +80,18 @@
         android:textColor="@android:color/white"
         android:textSize="12dp" />
 
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/image"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_toRightOf="@+id/image"
+        android:layout_below="@+id/barcode"
+        android:textColor="@android:color/white"
+        android:textSize="12dp" />
+
 
 </RelativeLayout>

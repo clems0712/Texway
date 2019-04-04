@@ -16,7 +16,7 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         barcodetextView = itemView.findViewById(R.id.barcode);
         nametextView = itemView.findViewById(R.id.name);
-        //scoretextView = itemView.findViewById(R.id.score);
+        scoretextView = itemView.findViewById(R.id.score);
         //compotextView = itemView.findViewById(R.id.compo);
 
     }
@@ -25,7 +25,7 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
         this.nametextView.setText(product.getName());
         this.barcodetextView.setText("Code-Barre : " + product.getBarcode());
         //this.compotextView.setText("Composition : " + product.getComposition());
-        //this.scoretextView.setText("Score : " + product.getScore());
+        this.scoretextView.setText("Score : " + product.getScore());
 
     }
 }
