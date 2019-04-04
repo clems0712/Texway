@@ -59,10 +59,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/image_bad_product"
         android:layout_alignStart="@+id/image_bad_product"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/zxing_viewfinder_laser"
         android:layout_centerVertical="true"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/white"
         android:textSize="10sp"
+        android:gravity="center"
         android:textStyle="bold" />
 
     <ImageView
@@ -103,8 +104,9 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@android:color/white"
         android:textSize="10sp"
+        android:gravity="center"
         android:textStyle="bold" />
 
 
