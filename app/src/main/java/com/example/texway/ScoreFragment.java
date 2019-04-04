@@ -1,4 +1,4 @@
-package com.example.texway.Fragment;
+package com.example.texway;
 
 import android.graphics.Color;
 import android.os.Bundle;

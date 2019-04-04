@@ -19,15 +19,6 @@ import com.google.zxing.integration.android.IntentResult;
 import java.util.ArrayList;
 import java.util.List;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link FlashHistoFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link FlashHistoFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class FlashHistoFragment extends Fragment {
 
 
@@ -40,15 +31,6 @@ public class FlashHistoFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FlashHistoFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static FlashHistoFragment newInstance(String param1, String param2) {
         FlashHistoFragment fragment = new FlashHistoFragment();
         return fragment;
@@ -57,9 +39,6 @@ public class FlashHistoFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //Exemple placeholder
-
 
     }
 
@@ -117,7 +96,7 @@ public class FlashHistoFragment extends Fragment {
 
         Product product = new Product();
         product.setName("Exemple de vêtement");
-        product.setBarcode("11111 000000");
+        product.setBarcode("11111000000");
         updateUI(product);
 
         return rootView;
@@ -137,22 +116,5 @@ public class FlashHistoFragment extends Fragment {
     private void updateUI(Product newProduct){
         products.add(newProduct);
         adapter.notifyDataSetChanged();
-    }
-
-
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 }
