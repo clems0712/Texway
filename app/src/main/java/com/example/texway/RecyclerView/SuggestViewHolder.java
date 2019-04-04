@@ -1,8 +1,11 @@
-package com.example.texway;
+package com.example.texway.RecyclerView;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.texway.Product;
+import com.example.texway.R;
 
 
 public class SuggestViewHolder extends RecyclerView.ViewHolder {
@@ -17,7 +20,7 @@ public class SuggestViewHolder extends RecyclerView.ViewHolder {
 
     }
 
-    public void updateWithSuggest(Product badproduct,Product goodProduct){
+    public void updateWithSuggest(Product badproduct, Product goodProduct){
         this.badProductNametextView.setText(badproduct.getName());
         this.goodProductNametextView.setText(goodProduct.getName());
 

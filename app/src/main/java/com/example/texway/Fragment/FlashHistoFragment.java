@@ -1,8 +1,7 @@
-package com.example.texway;
+package com.example.texway.Fragment;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -13,6 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.texway.Portrait;
+import com.example.texway.Product;
+import com.example.texway.RecyclerView.ProductViewAdapter;
+import com.example.texway.R;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 

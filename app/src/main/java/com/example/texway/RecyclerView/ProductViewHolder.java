@@ -1,8 +1,11 @@
-package com.example.texway;
+package com.example.texway.RecyclerView;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.texway.Product;
+import com.example.texway.R;
 
 
 public class ProductViewHolder extends RecyclerView.ViewHolder {

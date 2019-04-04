@@ -1,10 +1,13 @@
-package com.example.texway;
+package com.example.texway.RecyclerView;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.texway.Product;
+import com.example.texway.R;
 
 import java.util.List;
 

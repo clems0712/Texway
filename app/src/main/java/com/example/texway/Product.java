@@ -2,7 +2,7 @@ package com.example.texway;
 
 import java.util.List;
 
-class Product {
+public class Product {
 
     private String name;
     private String barcode;

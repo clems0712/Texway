@@ -1,26 +1,18 @@
-package com.example.texway;
+package com.example.texway.Fragment;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.texway.Product;
-import com.example.texway.ProductViewAdapter;
 import com.example.texway.R;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
+import com.example.texway.RecyclerView.SuggestViewAdapter;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 
 
 public class SuggestFragment extends Fragment {
