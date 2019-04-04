@@ -46,13 +46,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case  R.id.connect_facebook: {
                 //todo activity_connexion user
                 connect_facebook();
-                finish();
+                //finish();
                 break;
             }
             case  R.id.connect_google: {
                 //todo activity_connexion user
                 connect_google();
-                finish();
+                //finish();
                 break;
             }
             case  R.id.register: {
