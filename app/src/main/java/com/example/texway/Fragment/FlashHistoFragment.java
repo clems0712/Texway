@@ -58,6 +58,8 @@ public class FlashHistoFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //Exemple placeholder
+
 
     }
 
@@ -86,7 +88,7 @@ public class FlashHistoFragment extends Fragment {
                 alertDialog.setMessage("La produit a été ajouté à la liste");
                 alertDialog.show();
                 Product product = new Product();
-                product.setName("VETEMENT");
+                product.setName("Vêtement");
                 product.setBarcode(result.getContents());
                 updateUI(product);
 
@@ -111,6 +113,12 @@ public class FlashHistoFragment extends Fragment {
                 scanNow();
             }
         });
+
+        Product product = new Product();
+        product.setName("Exemple de vêtement");
+        product.setBarcode("11111 000000");
+        updateUI(product);
+
         return rootView;
     }
 

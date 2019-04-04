@@ -81,6 +81,11 @@ public class ScoreFragment extends Fragment {
         return rootView;
     }
 
+    private void createChart()
+    {
+
+    }
+
     private void addData() {
         List<PieEntry> yVals1 = new ArrayList<PieEntry>();
 
@@ -105,7 +110,7 @@ public class ScoreFragment extends Fragment {
         for (int c : ColorTemplate.COLORFUL_COLORS)
             colors.add(c);
 
-        for (int c : ColorTemplate.LIBERTY_COLORS)
+        for (int c : ColorTemplate.MATERIAL_COLORS)
             colors.add(c);
 
         for (int c : ColorTemplate.PASTEL_COLORS)
