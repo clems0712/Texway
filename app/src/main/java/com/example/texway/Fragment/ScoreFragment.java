@@ -29,7 +29,7 @@ import java.util.Map;
 public class ScoreFragment extends Fragment {
 
     private PieChart mChart;
-    private float[] yData = { 5, 20, 45, 30 };
+    private float[] yData = { 10, 20, 40, 30 };
     private String[] xData = { "Excellent", "Bon", "Mediocre","Mauvais"};
 
     public ScoreFragment() {
@@ -53,6 +53,7 @@ public class ScoreFragment extends Fragment {
         // configure pie chart
         mChart.setUsePercentValues(true);
         mChart.setDescription(new Description());
+        mChart.animateXY(500, 500);
 
         // enable hole and configure
         mChart.setDrawHoleEnabled(true);
