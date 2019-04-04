@@ -70,6 +70,7 @@ public class FlashHistoFragment extends Fragment {
         integrator.setOrientationLocked(false);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
         integrator.setPrompt("Scanner un produit");
+        integrator.setBeepEnabled(false);
         integrator.initiateScan();
 
     }
