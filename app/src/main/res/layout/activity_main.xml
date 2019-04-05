@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
+    android:typeface="serif"
     >
 
     <TextView
@@ -24,11 +25,11 @@
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationscan"
         android:layout_width="75dp"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:layout_marginTop="400dp"
         android:layout_marginLeft="150dp"
         app:lottie_rawRes="@raw/barcodescanner"
-        android:background="@mipmap/cirlceblue_round"
+        android:background="@mipmap/cirlceblue"
         android:layout_gravity="center"
         app:lottie_loop="true"
         app:lottie_autoPlay="true" />
