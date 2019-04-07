@@ -1,5 +1,8 @@
 package com.example.texway;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -7,6 +10,8 @@ public class Product implements Serializable {
 
     private String name;
     private String barcode;
+    private String marque = "Marque inconnue";
+    private Bitmap image;
     private List<String> composition;
     private int score;
 
@@ -41,5 +46,21 @@ public class Product implements Serializable {
 
     public void setBarcode(String barcode) {
         this.barcode = barcode;
+    }
+
+    public String getMarque() {
+        return marque;
+    }
+
+    public void setMarque(String marque) {
+        this.marque = marque;
+    }
+
+    public Bitmap getImage() {
+        return image;
+    }
+
+    public void setImage(Bitmap image) {
+        this.image = image;
     }
 }

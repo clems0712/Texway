@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
 
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="92dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="1dp"
         android:contentDescription="icon"
@@ -38,7 +38,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/score_product"
+        android:id="@+id/marque_product"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/name_product"
@@ -48,6 +48,31 @@
         android:textColor="@android:color/black"
         android:textSize="15sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/score_product"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/marque_product"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/composition"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/score_product"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="13sp"
+        android:lines="5"
+        android:scrollbars="vertical"/>
 
 
 </RelativeLayout>

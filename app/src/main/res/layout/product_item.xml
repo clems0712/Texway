@@ -42,16 +42,15 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginTop="1dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="1dp"
         android:contentDescription="icon"
-        android:src="@drawable/clothes_default"
-        />
+        android:src="@drawable/clothes_default" />
     <!-- barcode -->
     <TextView
         android:id="@+id/name"
@@ -66,9 +65,9 @@
         android:textSize="20dp"
         android:textStyle="bold" />
 
-    <!-- barcode -->
+    <!-- marque -->
     <TextView
-        android:id="@+id/barcode"
+        android:id="@+id/marque"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/image"
@@ -89,7 +88,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
         android:layout_toRightOf="@+id/image"
-        android:layout_below="@+id/barcode"
+        android:layout_below="@+id/marque"
         android:textColor="@android:color/white"
         android:textSize="12dp" />
 

@@ -99,10 +99,22 @@ public class FlashHistoFragment extends Fragment {
         });
 
 
-        //a enlever
+        //Placeholder a enlever
+        List<String> fakeCompo = new ArrayList<>();
+        fakeCompo.add("Substance allergène");
+        fakeCompo.add("Substance cancérigène");
+        fakeCompo.add("Substance allergène 2");
+        fakeCompo.add("Substance allergène 3");
+        fakeCompo.add("Substance cancérigène 2");
+        fakeCompo.add("Substance allergène");
+        fakeCompo.add("Substance cancérigène");
+        fakeCompo.add("Substance allergène 2");
+        fakeCompo.add("Substance allergène 3");
+        fakeCompo.add("Substance cancérigène 2");
         Product product = new Product();
         product.setName("Exemple de vêtement");
         product.setBarcode("11111000000");
+        product.setComposition(fakeCompo);
         updateUI(product);
 
         return rootView;
