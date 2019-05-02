@@ -2,6 +2,7 @@ package com.example.texway.Fragment;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -112,9 +113,12 @@ public class FlashHistoFragment extends Fragment {
         fakeCompo.add("Substance allergène 3");
         fakeCompo.add("Substance cancérigène 2");
         Product product = new Product();
-        product.setName("Exemple de vêtement");
+        product.setName("Jean noir");
+        product.setMarque("H&M");
+        product.setScore(70);
         product.setBarcode("11111000000");
         product.setComposition(fakeCompo);
+        product.setImage(BitmapFactory.decodeResource(this.getContext().getResources(),R.drawable.jean_noir));
         updateUI(product);
 
         return rootView;

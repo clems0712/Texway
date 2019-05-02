@@ -11,7 +11,7 @@ public class Product implements Serializable {
     private String name;
     private String barcode;
     private String marque = "Marque inconnue";
-    private Bitmap image;
+    private transient Bitmap image;
     private List<String> composition;
     private int score;
 
