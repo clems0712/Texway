@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/action_flash" android:icon="@drawable/ic_barcode_flash" android:title="Flasher"/>
+<item android:id="@+id/action_suggest" android:icon="@android:drawable/ic_dialog_info" android:title="Recommandations"/>
+<item android:id="@+id/action_settings" android:icon="@android:drawable/ic_popup_reminder" android:title="Score"/>
+</menu>
