@@ -1,11 +1,13 @@
 package com.example.texway.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.texway.Activity.ProductActivity;
 import com.example.texway.Product;
 import com.example.texway.R;
 
@@ -33,8 +35,16 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(ProductViewHolder viewHolder, int position) {
+    public void onBindViewHolder(final ProductViewHolder viewHolder, final int position) {
         viewHolder.updateWithProduct(this.products.get(position));
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(viewHolder.itemView.getContext(), ProductActivity.class);
+                intent.putExtra("Product", products.get(position));
+                viewHolder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
