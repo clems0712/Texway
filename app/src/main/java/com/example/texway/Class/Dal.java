@@ -41,7 +41,7 @@ public class Dal {
 
 // Add a new document with a generated ID
         db.collection("users")
-                .add(user)
+                .add(user)  
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
