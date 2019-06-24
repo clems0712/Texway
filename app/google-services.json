@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "696823762929",
+    "firebase_url": "https://texwaydb.firebaseio.com",
+    "project_id": "texwaydb",
+    "storage_bucket": "texwaydb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696823762929:android:eba2961dbce2f0a3",
+        "android_client_info": {
+          "package_name": "com.example.texway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696823762929-2l4nf5gvmo17rkt52l7n7olamvcv0p89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLCxJwCp8HGMW9i1KADubLE6RhX9aj1Gs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696823762929-2l4nf5gvmo17rkt52l7n7olamvcv0p89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
