@@ -2,6 +2,8 @@ package com.example.texway.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Parcel;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import com.example.texway.Activity.ProductActivity;
 import com.example.texway.Product;
 import com.example.texway.R;
 
+import java.io.ByteArrayOutputStream;
 import java.util.List;
 
 
@@ -41,6 +44,12 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewHolder> 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(viewHolder.itemView.getContext(), ProductActivity.class);
+                if (products.get(position).getImage() != null) {
+                    ByteArrayOutputStream bStream = new ByteArrayOutputStream();
+                    products.get(position).getImage().compress(Bitmap.CompressFormat.PNG, 100, bStream);
+                    byte[] byteArray = bStream.toByteArray();
+                    intent.putExtra("image", byteArray);
+                }
                 intent.putExtra("Product", products.get(position));
                 viewHolder.itemView.getContext().startActivity(intent);
             }

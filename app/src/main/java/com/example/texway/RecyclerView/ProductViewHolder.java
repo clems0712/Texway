@@ -31,6 +31,8 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
         this.marquetextView.setText(product.getMarque());
 
         this.scoretextView.setText("Qualité : " + Util.getQualityByScore(product.getScore()));
+        if (product.getImage() != null)
+            this.imageImageView.setImageBitmap(product.getImage());
 
     }
 }

@@ -1,5 +1,6 @@
 package com.example.texway.Activity;
 
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -44,6 +45,12 @@ public class ProductActivity extends AppCompatActivity {
         nameProduct.setText(product.getName());
         marqueProduct.setText(product.getMarque());
         scoreProduct.setText("Qualité : "  + Util.getQualityByScore(product.getScore()));
+
+        byte[] byteArray = getIntent().getByteArrayExtra("image");
+        if (byteArray != null) {
+            product.setImage(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length));
+            imageProduct.setImageBitmap(product.getImage());
+        }
 
         //scrolling
         compositionProduct.setMovementMethod(new ScrollingMovementMethod());
