@@ -8,81 +8,81 @@
 
     <Button
         android:id="@+id/connect"
-        android:layout_width="292dp"
-        android:layout_height="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
         android:onClick="onClick"
         android:text="Connexion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.322"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.647" />
+        app:layout_constraintVertical_bias="0.59" />
 
     <Button
         android:id="@+id/register"
-        android:layout_width="292dp"
-        android:layout_height="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
         android:onClick="onClick"
-        android:text="S'inscire"
+        android:text="Profile public"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.830"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758" />
+        app:layout_constraintVertical_bias="0.59" />
 
     <Button
         android:id="@+id/connect_google"
         android:layout_width="wrap_content"
-        android:layout_height="64dp"
+        android:layout_height="42dp"
         android:drawableLeft="@drawable/ic_google"
         android:onClick="onClick"
         android:text="Connexion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.889" />
+        app:layout_constraintVertical_bias="0.763" />
 
-    <Button
+    <com.facebook.login.widget.LoginButton
         android:id="@+id/connect_facebook"
         android:layout_width="wrap_content"
-        android:layout_height="64dp"
+        android:layout_height="42dp"
         android:drawableLeft="@drawable/ic_facebook"
         android:onClick="onClick"
         android:text="Connexion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintHorizontal_bias="0.900"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.889" />
+        app:layout_constraintVertical_bias="0.763" />
 
     <EditText
         android:id="@+id/inputPsw"
-        android:layout_width="320dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Mot de passe"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/connect"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputName" />
 
     <EditText
         android:id="@+id/inputName"
-        android:layout_width="320dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Nom d'utilisateur"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/inputPsw"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
