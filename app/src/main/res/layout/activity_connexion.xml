@@ -8,57 +8,56 @@
 
     <Button
         android:id="@+id/connect"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
+        android:layout_width="109dp"
+        android:layout_height="59dp"
         android:onClick="onClick"
         android:text="Connexion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintHorizontal_bias="0.282"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintVertical_bias="0.668" />
 
     <Button
         android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
+        android:layout_width="109dp"
+        android:layout_height="59dp"
         android:onClick="onClick"
-        android:text="Profile public"
+        android:text="Invité"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.830"
+        app:layout_constraintHorizontal_bias="0.728"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintVertical_bias="0.668" />
 
     <Button
         android:id="@+id/connect_google"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
+        android:layout_width="248dp"
+        android:layout_height="41dp"
         android:drawableLeft="@drawable/ic_google"
         android:onClick="onClick"
         android:text="Connexion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.763" />
+        app:layout_constraintVertical_bias="0.79" />
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/connect_facebook"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
+        android:layout_width="248dp"
+        android:layout_height="70dp"
         android:drawableLeft="@drawable/ic_facebook"
         android:onClick="onClick"
         android:text="Connexion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.900"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.763" />
+        app:layout_constraintVertical_bias="0.865" />
 
     <EditText
         android:id="@+id/inputPsw"

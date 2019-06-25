@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "696823762929-5mfdhpmk9nvsondf2kjksmsf19fd2v1g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.texway",
+            "certificate_hash": "691d3a72fbab9a2b6adeffb2bfda877a174e7046"
+          }
+        },
+        {
           "client_id": "696823762929-rrcukdkgadq5jqrsjn9lju6ekf361he5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
