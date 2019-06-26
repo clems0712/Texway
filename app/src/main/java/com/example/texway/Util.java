@@ -1,5 +1,10 @@
 package com.example.texway;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Util {
 
     public static String getQualityByScore(int score)
@@ -16,5 +21,32 @@ public class Util {
 
         return quality + " (" + score +")";
 
+    }
+
+    public static HashMap<String,List<Integer>> sortScoreByQuality(List<Integer> toSort)
+    {
+        HashMap<String,List<Integer>>  sorted = new HashMap<>();
+        sorted.put("Excellent", new ArrayList<Integer>());
+        sorted.put("Bon", new ArrayList<Integer>());
+        sorted.put("Médiocre", new ArrayList<Integer>());
+        sorted.put("Mauvais", new ArrayList<Integer>());
+        sorted.put("Tous", new ArrayList<Integer>());
+
+
+        for(Integer score : toSort)
+        {
+            if (score <= 25)
+                sorted.get("Mauvais").add(score);
+            else if (score <= 50)
+                sorted.get("Médiocre").add(score);
+            else if (score <= 75)
+                sorted.get("Bon").add(score);
+            else
+                sorted.get("Excellent").add(score);
+
+            sorted.get("Tous").add(score);
+        }
+
+        return sorted;
     }
 }
