@@ -32,19 +32,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.59" />
 
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/connect_google"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:drawableLeft="@drawable/ic_google"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:onClick="onClick"
-        android:text="Connexion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.763" />
+        app:layout_constraintVertical_bias="0.900"/>
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/connect_facebook"

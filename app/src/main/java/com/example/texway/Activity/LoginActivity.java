@@ -2,13 +2,17 @@ package com.example.texway.Activity;
 
 import android.content.Intent;
 
+import android.content.IntentSender;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -22,16 +26,38 @@ import com.example.texway.R;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.plus.Plus;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.tasks.Task;
+
 
 import java.util.Arrays;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
 
     EditText inputPsw;
     EditText inputName ;
 
-   private CallbackManager callbackManager;
-   private AccessTokenTracker accessTokenTracker;
+    CallbackManager callbackManager;
+    //AccessTokenTracker accessTokenTracker;
+   // GoogleApiClient.Builder googleApiClientBuilder;
+    GoogleApiClient mGoogleApiClient;
+    GoogleSignInAccount account;
+   // GoogleSignInClient mGoogleSignInClient;
+   private static final int REQ_CODE = 9001;
+    Intent signInIntent;
+    private boolean startActIfLog ;
+
 
 
     @Override
@@ -39,25 +65,46 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         callbackManager = CallbackManager.Factory.create();
 
-        AccessToken accessToken = AccessToken.getCurrentAccessToken();
-        boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
+        //AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        //boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
 
-         accessTokenTracker = new AccessTokenTracker() {
-            @Override
+      //   accessTokenTracker = new AccessTokenTracker() {
+          /*  @Override
             protected void onCurrentAccessTokenChanged(
                     AccessToken oldAccessToken,
                     AccessToken currentAccessToken) {
                 // Set the access token using
                 // currentAccessToken when it's loaded or set.
             }
+
+
         };
+        */
         // If the access token is available already assign it.
-
-
         setContentView(R.layout.activity_connexion);
-        Button connect = (Button) findViewById(R.id.connect);
+
+
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this,this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
+                .build();
+
+
+       // mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        SignInButton btnConnectGoogle = (SignInButton) findViewById(R.id.connect_google);
+        btnConnectGoogle.setOnClickListener(this);
+        btnConnectGoogle.setSize(SignInButton.SIZE_STANDARD);
+
+
+        Button connectfacebook = (Button) findViewById(R.id.connect);
         LoginButton btnLogin = (LoginButton)findViewById(R.id.connect_facebook);
-        connect.setOnClickListener(this);
+        connectfacebook.setOnClickListener(this);
         Button register = (Button) findViewById(R.id.register);
         register.setOnClickListener(this);
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -101,14 +148,55 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        callbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQ_CODE) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            handleResult(result);
+
+
+           // Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            //handleSignInResult(task);
+        }
+    }
+    private void handleResult(GoogleSignInResult result) {
+        if(result.isSuccess()){
+            GoogleSignInAccount account = result.getSignInAccount();
+            //Toast.makeText(this,"Connexion réussit",Toast.LENGTH_LONG).show();
+            updateUI(true);
+        }
+        else {
+           // Toast.makeText(this,"Echec de la connexion",Toast.LENGTH_LONG).show();
+            updateUI(false);
+        }
+    }
+
+    /*
+    @Override
+    public void onStart() {
+        super.onStart();
+        account = GoogleSignIn.getLastSignedInAccount(this);
+        updateUI(true);
+    }
+*/
+    public void  updateUI(boolean isLogin){
+        if(isLogin == true){
+            Toast.makeText(this,"Connexion réussit",Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this,MenuActivity.class));
+            startActIfLog = true;
+
+        }else {
+            Toast.makeText(this,"Echec de la connexion",Toast.LENGTH_LONG).show();
+            startActIfLog = false ;
+        }
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        accessTokenTracker.stopTracking();
+       // accessTokenTracker.stopTracking();
     }
 
     @Override
@@ -130,6 +218,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case  R.id.connect_google: {
                 //todo activity_connexion user
                 connect_google();
+                if(startActIfLog == true ){
+                    loginSuccessful();
+                    finish();
+                }
                 //finish();
                 break;
             }
@@ -147,7 +239,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
     private void connect_google()
     {
-        //TODO
+        signIn();
+
+    }
+
+    private void signIn() {
+        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+        startActivityForResult(signInIntent, REQ_CODE);
     }
 
     public void loginSuccessful()
@@ -165,6 +263,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
 }
