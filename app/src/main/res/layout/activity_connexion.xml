@@ -6,49 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".Activity.LoginActivity">
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="278dp"
+        android:layout_height="130dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056"
+        app:srcCompat="@drawable/logo" />
+        />
+
     <Button
         android:id="@+id/connect"
-        android:layout_width="109dp"
-        android:layout_height="59dp"
+        android:layout_width="356dp"
+        android:layout_height="52dp"
         android:onClick="onClick"
         android:text="Connexion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.282"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.668" />
-
-    <Button
-        android:id="@+id/register"
-        android:layout_width="109dp"
-        android:layout_height="59dp"
-        android:onClick="onClick"
-        android:text="Invité"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.728"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.668" />
+        app:layout_constraintVertical_bias="0.696" />
 
     <Button
         android:id="@+id/connect_google"
-        android:layout_width="248dp"
-        android:layout_height="41dp"
+        android:layout_width="357dp"
+        android:layout_height="51dp"
         android:drawableLeft="@drawable/ic_google"
         android:onClick="onClick"
-        android:text="Connexion"
+        android:text="Continue with Google"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.79" />
+        app:layout_constraintVertical_bias="0.795" />
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/connect_facebook"
-        android:layout_width="248dp"
-        android:layout_height="70dp"
+        android:layout_width="352dp"
+        android:layout_height="68dp"
         android:drawableLeft="@drawable/ic_facebook"
         android:onClick="onClick"
         android:text="Connexion"
@@ -68,7 +69,6 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/connect"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputName" />
 
@@ -81,8 +81,8 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/inputPsw"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
+
 </android.support.constraint.ConstraintLayout>

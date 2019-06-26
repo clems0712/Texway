@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.texway.Class.Dal;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -58,8 +59,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Button connect = (Button) findViewById(R.id.connect);
         LoginButton btnLogin = (LoginButton)findViewById(R.id.connect_facebook);
         connect.setOnClickListener(this);
-        Button register = (Button) findViewById(R.id.register);
-        register.setOnClickListener(this);
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
 
@@ -132,11 +131,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 connect_google();
                 //finish();
                 break;
-            }
-            case  R.id.register: {
-                //todo register user
-                LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile"));
-                break;
+            
             }
         }
     }
