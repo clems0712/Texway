@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.texway.FirebaseFacade;
+import com.example.texway.Class.Dal;
 import com.example.texway.Portrait;
 import com.example.texway.Product;
 import com.example.texway.RecyclerView.ProductViewAdapter;
@@ -57,6 +57,8 @@ public class FlashHistoFragment extends Fragment {
         integrator.setBeepEnabled(false);
         integrator.initiateScan();
 
+
+
     }
 
     @Override
@@ -72,10 +74,47 @@ public class FlashHistoFragment extends Fragment {
                 AlertDialog alertDialog = alertdialogbuilder.create();
                 alertDialog.setMessage("La produit a été ajouté à la liste");
                 alertDialog.show();
-                Product product = new Product();
-                product.setName("Vêtement");
-                product.setBarcode(result.getContents());
-                updateUI(product);
+
+
+               String Code=result.getContents();
+                String Code_format="";
+                for(int index_Code=0;index_Code<Code.length();index_Code++){
+                    if(Character.getNumericValue(Code.charAt(index_Code)) < 10 && Character.getNumericValue(Code.charAt(index_Code)) >=0 ){
+                        Code_format+=Code.charAt(index_Code);
+
+                    }}
+
+
+               String Store="";
+               Product product_base = new Product();
+               Product product = new Product();
+               Dal DataAcces = new Dal();
+
+
+
+               ///CODE BARRE TYPE H&M
+               if (Code_format.length()== 47 ){
+                   Store="HM";
+
+                   product_base = DataAcces.ReadProduct(Store,Code_format);
+                   product_base.setMarque("H&M");
+               }
+
+
+               if(product_base!=null){
+
+                   product.setImage(BitmapFactory.decodeResource(this.getContext().getResources(),R.drawable.jean_noir));
+                   product.setBarcode(Code_format);
+                   product.setMarque(product_base.getMarque());
+                   product.setName(product_base.getName());
+                   product.setType(product_base.getType());
+                   product.setComposition(product_base.getComposition());
+
+                   updateUI(product);
+               }else {
+                   //Message aucun produit
+               }
+
 
             }
         }
@@ -112,6 +151,10 @@ public class FlashHistoFragment extends Fragment {
         fakeCompo.add("Substance allergène 2");
         fakeCompo.add("Substance allergène 3");
         fakeCompo.add("Substance cancérigène 2");
+
+
+
+        ///Recupere le produit generique
         Product product = new Product();
         product.setName("Jean noir");
         product.setMarque("H&M");
