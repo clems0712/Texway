@@ -2,6 +2,7 @@ package com.example.texway.Fragment;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -96,6 +97,8 @@ public class FlashHistoFragment extends Fragment {
                if (Code_format.length()== 47 ){
                    Store="HM";
 
+                   Bitmap Product_Image = DataAcces.ReadPicture(Store,Code_format);
+                   product_base.setImage(Product_Image);
                    product_base = DataAcces.ReadProduct(Store,Code_format);
                    product_base.setMarque("H&M");
                }
@@ -103,7 +106,7 @@ public class FlashHistoFragment extends Fragment {
 
                if(product_base!=null){
 
-                   product.setImage(BitmapFactory.decodeResource(this.getContext().getResources(),R.drawable.jean_noir));
+                   product.setImage(product_base.getImage());
                    product.setBarcode(Code_format);
                    product.setMarque(product_base.getMarque());
                    product.setName(product_base.getName());
