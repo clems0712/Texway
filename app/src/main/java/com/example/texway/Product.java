@@ -1,13 +1,29 @@
 package com.example.texway;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
+import com.example.texway.SQLiteDatabase.ProductDatabase;
 
 import java.io.Serializable;
 import java.util.List;
 
 public class Product implements Serializable {
+    private static final int VERSION = 1;
+    private static final String NOM_BDD = "texway.db";
 
+    // Names of column
+    public static final String TABLE_NAME = "product";
+    public static final String KEY = "id";
+    public static final String BARCODE = "barcode";
+    public static final String MARQUE = "marque";
+    public static final String IMAGE = "image";
+    public static final String COMPOSITION = "id_composition";
+
+    // Variable's names
     private String name;
     private String barcode;
     private String marque ;
@@ -16,6 +32,31 @@ public class Product implements Serializable {
     private List<String> type;
     private int score;
 
+    private SQLiteDatabase db;
+
+    private ProductDatabase productDatabase;
+
+    public Product(Context context){
+        this.productDatabase = new ProductDatabase(context, TABLE_NAME, null, VERSION);
+    }
+
+    public void open(){
+        // Open the database on write mode
+        this.db = this.productDatabase.getWritableDatabase();
+    }
+
+    public void close(){
+        // Closing the access to the database
+        this.db.close();
+    }
+
+    public SQLiteDatabase getDb(){
+        return this.db;
+    }
+
+    public void addProduct() {
+        ContentValues values = new ContentValues();
+    }
 
     public Product( ){
 
