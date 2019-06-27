@@ -5,8 +5,8 @@ import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.example.texway.DAO.Product;
 import com.example.texway.Fragment.FlashHistoFragment;
-import com.example.texway.Product;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

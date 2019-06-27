@@ -1,5 +1,7 @@
 package com.example.texway;
 
+import com.example.texway.DAO.Product;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +25,7 @@ public class Util {
 
     }
 
-    public static HashMap<String,List<Integer>> sortScoreByQuality(List<Integer> toSort)
+    public static HashMap<String,List<Integer>> sortScoreByQuality(List<Product> toSort)
     {
         HashMap<String,List<Integer>>  sorted = new HashMap<>();
         sorted.put("Excellent", new ArrayList<Integer>());
@@ -33,8 +35,10 @@ public class Util {
         sorted.put("Tous", new ArrayList<Integer>());
 
 
-        for(Integer score : toSort)
+        for(Product product : toSort)
         {
+            int score = product.getScore();
+
             if (score <= 25)
                 sorted.get("Mauvais").add(score);
             else if (score <= 50)

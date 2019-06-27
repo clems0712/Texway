@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.texway.DAO.Product;
 import com.example.texway.R;
+import com.example.texway.Util;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
@@ -23,13 +25,13 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ScoreFragment extends Fragment {
 
     private PieChart mChart;
-    private float[] yData = { 10, 20, 40, 30 };
     private String[] xData = { "Excellent", "Bon", "Mediocre","Mauvais"};
 
     public ScoreFragment() {
@@ -87,6 +89,54 @@ public class ScoreFragment extends Fragment {
     }
 
     private void addData() {
+
+        Product p = new Product();
+
+        p.open(this.getActivity());
+        List<Product> plist = p.getAll();
+
+        HashMap<String,List<Integer>> sorted =  Util.sortScoreByQuality(plist);
+
+        List<Integer> excellent =   sorted.get("Excellent");
+        List<Integer> bon =   sorted.get("Bon");
+        List<Integer> mediocre =   sorted.get("Médiocre");
+        List<Integer> mauvais =   sorted.get("Mauvais");
+        List<Integer> tous =   sorted.get("Tous");
+
+        int sommeExc = 0;
+        int sommeBon = 0;
+        int sommeMediocre = 0;
+        int sommeMauvais = 0;
+        int sommeTous = 0;
+        float moyExc = 0f;
+        float moyBon = 0f;
+        float moyMediocre = 0f;
+        float moyMauvais = 0f;
+        float moyTous = 0f;
+
+        for (int i = 0; i < excellent.size(); i++ ){
+            sommeExc += excellent.get(i);
+        }
+        if (excellent.size()!= 0)        moyExc = sommeExc / excellent.size();
+
+        for (int i = 0; i < bon.size(); i++ ){
+            sommeBon += bon.get(i);
+        }
+
+        if (bon.size()!= 0)        moyBon = sommeBon / bon.size();
+
+        for (int i = 0; i < mauvais.size(); i++ ){
+            sommeMauvais += mauvais.get(i);
+        }
+        if (mauvais.size()!= 0)        moyMauvais = sommeMauvais / mauvais.size();
+
+        for (int i = 0; i < mediocre.size(); i++ ){
+            sommeMediocre += mediocre.get(i);
+        }
+        if (mediocre.size()!= 0)        moyMediocre = sommeMediocre / mediocre.size();
+
+        float[] yData = { moyExc, moyBon, moyMediocre, moyMauvais };
+
         List<PieEntry> yVals1 = new ArrayList<PieEntry>();
 
         for (int i = 0; i < yData.length; i++)
