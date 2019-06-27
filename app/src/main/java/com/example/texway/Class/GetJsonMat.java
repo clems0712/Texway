@@ -40,7 +40,6 @@ public class GetJsonMat {
 
                 str = str.replaceAll("([0-9]+%)", "");
                 str = str.trim();
-                System.out.println(str);
                 compo.set(compo.indexOf(c),str);
             }
 

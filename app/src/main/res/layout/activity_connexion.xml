@@ -33,13 +33,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.696" />
 
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/connect_google"
-        android:layout_width="357dp"
-        android:layout_height="51dp"
-        android:drawableLeft="@drawable/ic_google"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
         android:onClick="onClick"
-        android:text="Continue with Google"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,8 +48,8 @@
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/connect_facebook"
-        android:layout_width="352dp"
-        android:layout_height="68dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_facebook"
         android:onClick="onClick"
         android:text="Connexion"
