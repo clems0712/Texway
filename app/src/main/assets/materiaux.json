@@ -1,267 +1,267 @@
 ﻿[
 	{
-		"materiaux": "Coton",
+		"materiaux": "coton",
 		"origine": "végétale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "80",
 		"famille": "x"
 	},
 	{
-		"materiaux": "Lin",
+		"materiaux": "lin",
 		"origine": "végétale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "80",
 		"famille": "x"
 	},
 	{
-		"materiaux": "Chanvre",
+		"materiaux": "chanvre",
 		"origine": "végétale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "80",
 		"famille": "x"
 	},
 	{
-		"materiaux": "Jute",
+		"materiaux": "jute",
 		"origine": "végétale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "80",
 		"famille": ""
 	},
 	{
-		"materiaux": "Ramie",
+		"materiaux": "ramie",
 		"origine": "végétale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "80",
 		"famille": ""
 	},
 	{
-		"materiaux": "Ortie",
+		"materiaux": "ortie",
 		"origine": "végétale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "80",
 		"famille": ""
 	},
 	{
-		"materiaux": "Cuir",
+		"materiaux": "cuir",
 		"origine": "animale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "70",
 		"famille": ""
 	},
 	{
 		"materiaux": "kapok",
 		"origine": "végétale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "80",
 		"famille": ""
 	},
 	{
 		"materiaux": "kénaf",
 		"origine": "végétale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "80",
 		"famille": ""
 	},
 	{
 		"materiaux": "manille",
 		"origine": "végétale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "80",
 		"famille": ""
 	},
 	{
 		"materiaux": "fils d'araignée",
 		"origine": "animale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "70",
 		"famille": "non cellulosique"
 	},
 	{
-		"materiaux": "Soie",
+		"materiaux": "soie",
 		"origine": "animale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "70",
 		"famille": ""
 	},
 	{
-		"materiaux": "Laine",
+		"materiaux": "laine",
 		"origine": " shetland",
 		"categorie": "animale",
-		"notation": "Naturelle",
+		"notation": "naturelle",
 		"famille": 70
 	},
 	{
-		"materiaux": "Cachemire",
+		"materiaux": "cachemire",
 		"origine": "animale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "70",
 		"famille": ""
 	},
 	{
-		"materiaux": "Angora",
+		"materiaux": "angora",
 		"origine": "animale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "70",
 		"famille": ""
 	},
 	{
-		"materiaux": "Alpaga",
+		"materiaux": "alpaga",
 		"origine": "animale",
-		"categorie": "Naturelle",
+		"categorie": "naturelle",
 		"notation": "70",
 		"famille": ""
 	},
 	{
-		"materiaux": "Viscose",
+		"materiaux": "viscose",
 		"origine": "artificielles",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "60",
 		"famille": ""
 	},
 	{
-		"materiaux": "Acétane",
+		"materiaux": "acétane",
 		"origine": "artificielles",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "60",
 		"famille": ""
 	},
 	{
-		"materiaux": "Lyocell",
+		"materiaux": "lyocell",
 		"origine": "artificielles",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "60",
 		"famille": ""
 	},
 	{
-		"materiaux": "Bambou",
+		"materiaux": "bambou",
 		"origine": "artificielles",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "60",
 		"famille": ""
 	},
 	{
-		"materiaux": "Soja",
+		"materiaux": "soja",
 		"origine": "artificielles",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "60",
 		"famille": ""
 	},
 	{
-		"materiaux": "Maïs",
+		"materiaux": "maïs",
 		"origine": "artificielles",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "60",
 		"famille": ""
 	},
 	{
-		"materiaux": "Pinatex",
+		"materiaux": "pinatex",
 		"origine": "artificielles",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "60",
 		"famille": ""
 	},
 	{
-		"materiaux": "Polyester",
+		"materiaux": "polyester",
 		"origine": "synthétiques",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "50",
 		"famille": "polymère organique"
 	},
 	{
-		"materiaux": "Polyamide (nylon)",
+		"materiaux": "polyamide (nylon)",
 		"origine": "synthétiques",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "50",
 		"famille": "polymère organique"
 	},
 	{
-		"materiaux": "Aramides",
+		"materiaux": "aramides",
 		"origine": "synthétiques",
-		"categorie": "Chimique",
+		"categorie": "chimique",
 		"notation": "50",
 		"famille": "polymère organique"
 	},
 	{
-		"materiaux": "Elasthane",
+		"materiaux": "elasthane",
 		"origine": "synthétiques",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "50",
 		"famille": "polymère organique"
 	},
 	{
-		"materiaux": "Acrylique",
+		"materiaux": "acrylique",
 		"origine": "synthétiques",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "50",
 		"famille": ""
 	},
 	{
-		"materiaux": "Daim",
+		"materiaux": "daim",
 		"origine": "synthétiques",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "50",
 		"famille": ""
 	},
 	{
-		"materiaux": "Fourrure",
+		"materiaux": "fourrure",
 		"origine": "synthétiques",
-		"categorie": "Chimiques",
+		"categorie": "chimiques",
 		"notation": "50",
 		"famille": ""
 	},
 	{
-		"materiaux": "Cupro",
+		"materiaux": "cupro",
 		"origine": "artificielle",
-		"categorie": "Chimique",
+		"categorie": "chimique",
 		"notation": "50",
 		"famille": "cellulose régénérée"
 	},
 	{
-		"materiaux": "Caoutchouc",
+		"materiaux": "caoutchouc",
 		"origine": "artificielle",
-		"categorie": "Chimique",
+		"categorie": "chimique",
 		"notation": "35",
 		"famille": "non cellulosique"
 	},
 	{
 		"materiaux": "latex",
 		"origine": "artificielle",
-		"categorie": "Chimique",
+		"categorie": "chimique",
 		"notation": "35",
 		"famille": "non cellulosique"
 	},
 	{
 		"materiaux": "tri-acétate",
 		"origine": "artificielle",
-		"categorie": "Chimique",
+		"categorie": "chimique",
 		"notation": "15",
 		"famille": "esters cellulosique"
 	},
 	{
 		"materiaux": "polyarcylique",
 		"origine": "synthétiques",
-		"categorie": "Chimique",
+		"categorie": "chimique",
 		"notation": "15",
 		"famille": "polymère organique"
 	},
 	{
 		"materiaux": "modacrylique",
 		"origine": "synthétiques",
-		"categorie": "Chimique",
+		"categorie": "chimique",
 		"notation": "15",
 		"famille": "polymère organique"
 	},
 	{
 		"materiaux": "polyuréthanne",
 		"origine": "synthétiques",
-		"categorie": "Chimique",
+		"categorie": "chimique",
 		"notation": "15",
 		"famille": "polymère organique"
 	},
 	{
 		"materiaux": "polypropylène",
 		"origine": "synthétiques",
-		"categorie": "Chimique",
+		"categorie": "chimique",
 		"notation": "15",
 		"famille": "polymère organique"
 	}

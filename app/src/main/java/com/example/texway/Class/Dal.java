@@ -75,6 +75,7 @@ public class Dal {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
+                instance.onDBResult(DB_Product);
                 // Handle any errors
             }
         });
@@ -123,11 +124,13 @@ public class Dal {
                         DB_Product.setType(L_Listtype);
                         DB_Product.setName(document.getString("nom"));
                         DB_Product.setMarque(P_Store);
+                        int score = GetJsonMat.notation(L_Listcomposition,instance.getContext());
+                        DB_Product.setScore(score);
                         AddPictureAndFinish(P_Store,P_reference,DB_Product,instance);
 
 
                     } else {
-                        Log.d("Database :", "No such document");
+                        instance.onDBResult(null);
                     }
                 } else {
                     Log.d("Database :", "get failed with ", task.getException());

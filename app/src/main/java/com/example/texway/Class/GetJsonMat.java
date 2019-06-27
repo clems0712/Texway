@@ -1,10 +1,15 @@
 
 package com.example.texway.Class;
+import android.content.Context;
+import android.content.res.AssetManager;
+
 import com.example.texway.Class.CriteresMateriaux;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,18 +21,31 @@ import com.google.gson.Gson;
 
 public class GetJsonMat {
 
-    public static void notation(List<String> compo){
+    public static int notation(List<String> compo, Context context){
 
-        String path = "app/src/materiaux.json";
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+            AssetManager mngr = context.getAssets();
+            InputStream is = mngr.open("materiaux.json");
 
+            BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 
             Gson gson = new Gson();
-            CriteresMateriaux[] mat = gson.fromJson(bufferedReader, CriteresMateriaux[].class);
+            CriteresMateriaux[] mat = gson.fromJson(br, CriteresMateriaux[].class);
             List<Integer> moyenne = new ArrayList<>();
 
+            for (String c:compo)
+            {
+                String str = c;
+                str = str.toLowerCase();
+
+                str = str.replaceAll("([0-9]+%)", "");
+                str = str.trim();
+                System.out.println(str);
+                compo.set(compo.indexOf(c),str);
+            }
+
             for(CriteresMateriaux materiau : mat){
+
 
                 if (compo.contains(materiau.getMateriaux())){
 
@@ -45,22 +63,15 @@ public class GetJsonMat {
 
             Double m = total/moyenne.size();
             int moy = m.intValue();
-            System.out.println("La moyenne :"+moy);
-            //System.out.println("moyenne :"+Math.round(moy));
+
+            System.out.println("La moyenne : "+moy);
+
+            return moy;
+
         } catch (Exception e)
         {
-
+            return 0;
         }
-    }
-
-    public static void main(String[] args) throws FileNotFoundException {
-
-        List<String> ListCompo = new ArrayList<String>();
-        ListCompo.add("Lin");
-        ListCompo.add("latex");
-        ListCompo.add("Coton");
-        notation(ListCompo);
-
     }
 
 }
