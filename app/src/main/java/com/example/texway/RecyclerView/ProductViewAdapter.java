@@ -3,14 +3,13 @@ package com.example.texway.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.Parcel;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.texway.Activity.ProductActivity;
-import com.example.texway.Product;
+import com.example.texway.DAO.Product;
 import com.example.texway.R;
 
 import java.io.ByteArrayOutputStream;

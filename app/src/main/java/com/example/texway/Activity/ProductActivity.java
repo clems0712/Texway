@@ -3,12 +3,11 @@ package com.example.texway.Activity;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.texway.Product;
+import com.example.texway.DAO.Product;
 import com.example.texway.R;
 import com.example.texway.Util;
 

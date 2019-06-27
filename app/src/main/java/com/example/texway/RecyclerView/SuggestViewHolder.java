@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.texway.Product;
+import com.example.texway.DAO.Product;
 import com.example.texway.R;
 
 

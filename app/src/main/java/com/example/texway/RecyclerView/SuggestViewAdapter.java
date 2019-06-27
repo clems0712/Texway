@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.texway.Activity.ProductActivity;
-import com.example.texway.Product;
+import com.example.texway.DAO.Product;
 import com.example.texway.R;
 
 import java.util.ArrayList;

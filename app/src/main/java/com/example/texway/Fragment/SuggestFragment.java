@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.texway.Product;
+import com.example.texway.DAO.Product;
 import com.example.texway.R;
 import com.example.texway.RecyclerView.SuggestViewAdapter;
 
@@ -42,14 +42,14 @@ public class SuggestFragment extends Fragment {
         this.configureRecyclerView();
 
         // exemples a enlever
-        Product bad = new Product();
+        Product bad = new Product(this.getContext());
         bad.setName("Vêtement 1");
-        Product good = new Product();
+        Product good = new Product(this.getContext());
         good.setName("Vêtement 2");
         updateUI(bad,good);
-        Product bad2 = new Product();
+        Product bad2 = new Product(this.getContext());
         bad.setName("Vêtement 1");
-        Product good2 = new Product();
+        Product good2 = new Product(this.getContext());
         good.setName("Vêtement 2");
         bad2.setName("mauvais vêtement");
         good2.setName("bon vêtement");
