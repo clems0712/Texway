@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.example.texway.Fragment.FlashHistoFragment;
 import com.example.texway.Product;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -80,11 +81,11 @@ public class Dal {
 
 
 
-    public Product ReadProduct(String P_Store, String P_reference){
+    public Product ReadProduct(final String P_Store, final String P_reference, final FlashHistoFragment instance){
 
         //initialise
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
+        System.out.println(P_reference);
         //recupere document
         DocumentReference docRef = db.collection(P_Store).document(P_reference);
 
@@ -92,6 +93,7 @@ public class Dal {
 
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
@@ -119,7 +121,9 @@ public class Dal {
                         DB_Product.setComposition(L_Listcomposition);
                         DB_Product.setType(L_Listtype);
                         DB_Product.setName(document.getString("nom"));
-
+                        DB_Product.setImage(ReadPicture(P_Store,P_reference));
+                        System.out.println(document.getString("nom"));
+                        instance.onDBResult(DB_Product);
 
                     } else {
                         Log.d("Database :", "No such document");

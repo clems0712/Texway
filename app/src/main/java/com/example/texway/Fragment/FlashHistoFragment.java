@@ -97,23 +97,8 @@ public class FlashHistoFragment extends Fragment {
                if (Code_format.length()== 47 ){
                    Store="HM";
 
-                   Bitmap Product_Image = DataAcces.ReadPicture(Store,Code_format);
-                   product_base.setImage(Product_Image);
-                   product_base = DataAcces.ReadProduct(Store,Code_format);
-                   product_base.setMarque("H&M");
-               }
+                   DataAcces.ReadProduct(Store,Code_format,this);
 
-
-               if(product_base!=null){
-
-                   product.setImage(product_base.getImage());
-                   product.setBarcode(Code_format);
-                   product.setMarque(product_base.getMarque());
-                   product.setName(product_base.getName());
-                   product.setType(product_base.getType());
-                   product.setComposition(product_base.getComposition());
-
-                   updateUI(product);
                }else {
                    //Message aucun produit
                }
@@ -124,6 +109,13 @@ public class FlashHistoFragment extends Fragment {
         else{
             super.onActivityResult(requestCode,resultCode,data);
         }
+    }
+
+    public void onDBResult(Product product_base)
+    {
+        product_base.setMarque("H&M");
+
+        updateUI(product_base);
     }
 
     @Override
