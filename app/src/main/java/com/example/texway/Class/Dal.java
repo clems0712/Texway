@@ -53,12 +53,12 @@ public class Dal {
     }
 
 
-    public Bitmap ReadPicture(String P_Store,String P_reference){
+    public void AddPictureAndFinish(String P_Store,String P_reference,final Product DB_Product,final FlashHistoFragment instance) {
 
 
         mStorageRef = FirebaseStorage.getInstance("gs://texwaydb.appspot.com").getReference();
 
-        StorageReference storageRef = mStorageRef.getStorage().getReference().child(P_Store+"/"+P_reference);
+        StorageReference storageRef = mStorageRef.getStorage().getReference().child(P_Store + "/" + P_reference);
 
 
         final long ONE_MEGABYTE = 1024 * 1024;
@@ -66,7 +66,11 @@ public class Dal {
             @Override
             public void onSuccess(byte[] bytes) {
                 // Data for "images/island.jpg" is returns, use this as needed
-                DB_Picture= BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+                DB_Picture = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                Product p = DB_Product;
+                p.setImage(DB_Picture);
+                instance.onDBResult(DB_Product);
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -75,8 +79,6 @@ public class Dal {
             }
         });
 
-
-        return DB_Picture;
     }
 
 
@@ -85,7 +87,6 @@ public class Dal {
 
         //initialise
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        System.out.println(P_reference);
         //recupere document
         DocumentReference docRef = db.collection(P_Store).document(P_reference);
 
@@ -121,9 +122,9 @@ public class Dal {
                         DB_Product.setComposition(L_Listcomposition);
                         DB_Product.setType(L_Listtype);
                         DB_Product.setName(document.getString("nom"));
-                        DB_Product.setImage(ReadPicture(P_Store,P_reference));
-                        System.out.println(document.getString("nom"));
-                        instance.onDBResult(DB_Product);
+                        DB_Product.setMarque(P_Store);
+                        AddPictureAndFinish(P_Store,P_reference,DB_Product,instance);
+
 
                     } else {
                         Log.d("Database :", "No such document");

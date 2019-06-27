@@ -70,11 +70,6 @@ public class FlashHistoFragment extends Fragment {
                 Toast.makeText(getContext(),"Annulé",Toast.LENGTH_SHORT).show();
             }
             else{
-                AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(getContext());
-                alertdialogbuilder.setTitle("Produit scanné");
-                AlertDialog alertDialog = alertdialogbuilder.create();
-                alertDialog.setMessage("La produit a été ajouté à la liste");
-                alertDialog.show();
 
 
                String Code=result.getContents();
@@ -99,8 +94,12 @@ public class FlashHistoFragment extends Fragment {
 
                    DataAcces.ReadProduct(Store,Code_format,this);
 
-               }else {
-                   //Message aucun produit
+               } else {
+                   AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(getContext());
+                   alertdialogbuilder.setTitle("Produit introuvable");
+                   AlertDialog alertDialog = alertdialogbuilder.create();
+                   alertDialog.setMessage("Le produit n'est pas encore noté");
+                   alertDialog.show();
                }
 
 
@@ -113,9 +112,12 @@ public class FlashHistoFragment extends Fragment {
 
     public void onDBResult(Product product_base)
     {
-        product_base.setMarque("H&M");
-
         updateUI(product_base);
+        AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(getContext());
+        alertdialogbuilder.setTitle("Produit scanné");
+        AlertDialog alertDialog = alertdialogbuilder.create();
+        alertDialog.setMessage("La produit a été ajouté à la liste");
+        alertDialog.show();
     }
 
     @Override
