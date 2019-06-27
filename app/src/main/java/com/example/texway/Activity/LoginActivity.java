@@ -23,6 +23,8 @@ import com.example.texway.R;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Arrays;
 
@@ -53,6 +55,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         };
         // If the access token is available already assign it.
+
+
+
+        //STORAGE
 
 
         setContentView(R.layout.activity_connexion);

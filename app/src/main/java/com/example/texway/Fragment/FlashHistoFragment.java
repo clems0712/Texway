@@ -2,6 +2,7 @@ package com.example.texway.Fragment;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.texway.Class.Dal;
@@ -31,6 +33,7 @@ public class FlashHistoFragment extends Fragment {
 
     List<Product> products;
     ProductViewAdapter adapter;
+    private ProgressBar spinner;
 
     public FlashHistoFragment() {
         // Required empty public constructor
@@ -44,7 +47,6 @@ public class FlashHistoFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     private void scanNow()
@@ -69,11 +71,6 @@ public class FlashHistoFragment extends Fragment {
                 Toast.makeText(getContext(),"Annulé",Toast.LENGTH_SHORT).show();
             }
             else{
-                AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(getContext());
-                alertdialogbuilder.setTitle("Produit scanné");
-                AlertDialog alertDialog = alertdialogbuilder.create();
-                alertDialog.setMessage("La produit a été ajouté à la liste");
-                alertDialog.show();
 
 
                String Code=result.getContents();
@@ -95,24 +92,15 @@ public class FlashHistoFragment extends Fragment {
                ///CODE BARRE TYPE H&M
                if (Code_format.length()== 47 ){
                    Store="HM";
+                   spinner.setVisibility(View.VISIBLE);
+                   DataAcces.ReadProduct(Store,Code_format,this);
 
-                   product_base = DataAcces.ReadProduct(Store,Code_format);
-                   product_base.setMarque("H&M");
-               }
-
-
-               if(product_base!=null){
-
-                   product.setImage(BitmapFactory.decodeResource(this.getContext().getResources(),R.drawable.jean_noir));
-                   product.setBarcode(Code_format);
-                   product.setMarque(product_base.getMarque());
-                   product.setName(product_base.getName());
-                   product.setType(product_base.getType());
-                   product.setComposition(product_base.getComposition());
-
-                   updateUI(product);
-               }else {
-                   //Message aucun produit
+               } else {
+                   AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(getContext());
+                   alertdialogbuilder.setTitle("Produit introuvable");
+                   AlertDialog alertDialog = alertdialogbuilder.create();
+                   alertDialog.setMessage("Le produit n'est pas encore noté");
+                   alertDialog.show();
                }
 
 
@@ -123,12 +111,28 @@ public class FlashHistoFragment extends Fragment {
         }
     }
 
+    public void onDBResult(Product product_base)
+    {
+        if (product_base != null) {
+            updateUI(product_base);
+            AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(getContext());
+            alertdialogbuilder.setTitle("Produit scanné");
+            AlertDialog alertDialog = alertdialogbuilder.create();
+            alertDialog.setMessage("La produit a été ajouté à la liste");
+            alertDialog.show();
+        }
+
+        spinner.setVisibility(View.GONE);
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_flash_histo, container, false);
         recyclerView = rootView.findViewById(R.id.historique_list);
         this.configureRecyclerView();
+        spinner = (ProgressBar)rootView.findViewById(R.id.progress_bar);
 
         FloatingActionButton fab = rootView.findViewById(R.id.buttonScan);
         fab.setOnClickListener(new View.OnClickListener() {
